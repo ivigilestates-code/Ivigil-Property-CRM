@@ -1,0 +1,23 @@
+{
+  "entities": {
+    "Lead": {
+      "title": "Lead",
+      "description": "A potential client",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "status": { "type": "string", "enum": ["New", "Contacted", "Site Visit", "Closed"] },
+        "notes": { "type": "string" },
+        "followUp": { "type": "string", "format": "date" }
+      },
+      "required": ["name", "phone", "status"]
+    }
+  },
+  "firestore": {
+    "/leads/{leadId}": {
+      "schema": "Lead",
+      "description": "Collection of leads"
+    }
+  }
+}

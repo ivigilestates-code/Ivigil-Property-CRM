@@ -1941,7 +1941,8 @@ function renderCharts() {
   });
 }
 
-
+// ── Export ──
+function exportReport(){
   let txt='iVigil Estates — AI Match Report\n'+'='.repeat(55)+'\n';
   txt+='Generated: '+new Date().toLocaleString()+'\n';
   txt+='Clients: '+ALL_CLIENTS.length+' | Exclusive Properties: '+ALL_EXCLUSIVE.length+'\n\n';
@@ -3643,15 +3644,5 @@ document.addEventListener('keydown', function(e){
   </div>
 </div>
 
-<script type="module">
-
-window.generateDescription = function(propertyId) {
-  const p = ALL_EXCLUSIVE.find(x => x.id === propertyId);
-  if (!p) return;
-  const prompt = `Write a premium, attractive property description for a ${p.bhkNum} BHK ${p.ptype} in ${p.locality}, ${p.city}. Features: ${p.features}. Price: ${p.price}.`;
-  // Placeholder for AI API call
-  alert('Generating description for: ' + prompt);
-};
-</script>
 </body>
 </html>
